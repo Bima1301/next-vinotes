@@ -3,7 +3,6 @@ import prisma from '@/lib/prismadb';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
-
     try {
         const body = await req.json();
         const { email, name, password, confirmPassword } = body;

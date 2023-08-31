@@ -2,6 +2,7 @@
 CREATE TABLE "User" (
     "id" TEXT NOT NULL,
     "email" TEXT,
+    "username" TEXT,
     "image" TEXT,
     "name" TEXT,
     "password" TEXT NOT NULL,
@@ -26,6 +27,9 @@ CREATE TABLE "Note" (
 
 -- CreateIndex
 CREATE UNIQUE INDEX "User_email_key" ON "User"("email");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "User_username_key" ON "User"("username");
 
 -- AddForeignKey
 ALTER TABLE "Note" ADD CONSTRAINT "Note_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

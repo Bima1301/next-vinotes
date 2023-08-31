@@ -16,7 +16,7 @@ export default function Authform() {
     const router = useRouter();
     useEffect(() => {
         if (session?.status === 'authenticated') {
-            router.push('/');
+            router.push('/home');
         }
     }, [session?.status, router]);
 
@@ -85,7 +85,6 @@ export default function Authform() {
             setIsLoading(false);
         });
     }
-
     return (
         <section className='md:mt-10 mt-7'>
             <form onSubmit={handleSubmit(onSubmit)}>
