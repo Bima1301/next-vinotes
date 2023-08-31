@@ -1,12 +1,7 @@
-import Image from 'next/image'
-import Leftside from './components/Leftside'
-import Rightside from './components/Rightside'
+import React from 'react'
 
-export default function Home() {
-  return (
-    <section className='min-w-full min-h-screen flex flex-row'>
-      <Leftside />
-      <Rightside />
-    </section>
-  )
+export default function page() {
+    return (
+        <div>Ini halaman utama</div>
+    )
 }
