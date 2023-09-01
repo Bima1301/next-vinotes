@@ -1,4 +1,4 @@
-'use client'
+// Transition.tsx
 import { useState, useEffect, Fragment, ReactNode } from 'react';
 
 interface TransitionProps {
@@ -23,11 +23,13 @@ const Transition = ({ show, duration = 400, children }: TransitionProps) => {
     }, [show, duration]);
 
     return (
-        <div
-            className={`transition-all duration-${duration} ${show ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                }`}
-        >
-            {isMounted && <Fragment>{children}</Fragment>}
+        <div className='fixed left-0 top-0 w-full'>
+            <div
+                className={`transition-transform duration-${duration} transform ${show ? 'translate-x-0' : '-translate-x-full'
+                    }`}
+            >
+                {isMounted && <Fragment>{children}</Fragment>}
+            </div>
         </div>
     );
 };

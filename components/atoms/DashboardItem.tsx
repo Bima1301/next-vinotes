@@ -15,7 +15,7 @@ interface ItemsProps {
 
 function className({ active }: { active: boolean }) {
     return clsx(`pl-6 py-3 mx-5 rounded-md text-center cursor-pointer mb-3 flex items-center transition-colors md:text-base text-sm`, active
-        ? "bg-[#033FFF] bg-opacity-[0.1] text-white" : "text-white hover:bg-[#033FFF] hover:bg-opacity-[0.1] hover:text-[#4A9FF5]")
+        ? "bg-[#97FFF4] bg-opacity-[0.6] text-white" : "text-white hover:bg-[#97FFF4] hover:bg-opacity-[0.6] hover:text-white")
 }
 const Items: React.FC<ItemsProps> = ({ label, icon: Icon, active, href, onClick, isButton }) => (
     <>

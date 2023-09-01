@@ -1,6 +1,6 @@
 'use client'
-import Button from '@/components/Button'
-import Input from '@/components/Input'
+import Button from '@/components/atoms/Button'
+import Input from '@/components/atoms/Input'
 import React, { useCallback, useEffect, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import AuthSocialButton from './AuthSocialButton'
@@ -124,12 +124,12 @@ export default function Authform() {
                         disabled={isLoading}
                     />
                 )}
-                {variant === 'LOGIN' && (
+                {/* {variant === 'LOGIN' && (
                     <label htmlFor="remember" className='inline-flex items-center md:text-sm text-xs  text-gray-700 mb-1'>
                         <input type="checkbox" name="remember" id="remember" className='mr-1 h-4 w-4 accent-[#946263]' />
                         <span>Remember me</span>
                     </label>
-                )}
+                )} */}
                 <Button disable={isLoading} fullWidth type="submit" className='bg-[#94ADD7]  hover:bg-[#8196bb] transition-colors duration-300 mt-8' >
                     {variant === 'REGISTER' ? 'Register' : 'Sign in'}
                 </Button>

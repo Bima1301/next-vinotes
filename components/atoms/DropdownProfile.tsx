@@ -23,23 +23,26 @@ const items: MenuProps['items'] = [
         key: '3',
     },
 ];
-export default function DropdownProfile() {
+type DropdownProfileProps = {
+    name?: string
+}
+export default function DropdownProfile({ name }: DropdownProfileProps) {
     return (
-        <div className='absolute right-5 top-5 bg-black text-white px-2 py-2 rounded-full'>
+        <div className='absolute right-5 top-5 bg-slate-700 text-white px-2 py-2 rounded-full'>
             <Dropdown menu={{ items }} trigger={['click']}
-                className='bg-black'
             >
                 <a onClick={(e) => e.preventDefault()} className='cursor-pointer flex flex-row items-center gap-3'>
                     <Image
                         priority
                         src={imgProfile}
                         alt='profile'
-                        className='w-6 h-6 rounded-full'
+                        className='w-8 h-8 rounded-full'
                     />
                     <Space>
-                        <p className='text-sm'>
+                        <p className=''>
+                            Hello, {" "}
                             {
-                                'Yanuar Bima'.substring(0, 11) + ('yanuar bima'.length > 11 ? '...' : '')
+                                name?.substring(0, 11) + (name ? (name.length > 11 ? '...' : '') : "")
                             }
                         </p>
                         <IoIosArrowDown />
