@@ -1,6 +1,6 @@
 'use client'
 
-import Input from '@/components/atoms/Input'
+import Input from '@/components/atoms/InputForm'
 import { cn } from '@/lib/utils'
 import { Modal } from 'antd'
 import React, { useState } from 'react'
@@ -8,7 +8,13 @@ import { AiOutlinePlusCircle } from 'react-icons/ai'
 import { LiaTimesSolid } from 'react-icons/lia'
 import CreateModal from '../molecules/CreateModal'
 
-export default function Topbar() {
+type TopbarProps = {
+    category: {} | null
+}
+
+export default function Topbar(
+    { category }: TopbarProps
+) {
     const [showModal, setShowModal] = useState(false)
 
     const nav = ['All', 'Project', 'Bussines', 'Personal']
@@ -31,6 +37,7 @@ export default function Topbar() {
                 <p>Add new note</p>
             </div>
             <CreateModal
+                category={category}
                 showModal={showModal}
                 setShowModal={setShowModal}
             />

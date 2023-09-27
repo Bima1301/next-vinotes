@@ -1,6 +1,6 @@
 'use client'
 import Button from '@/components/atoms/Button'
-import Input from '@/components/atoms/Input'
+import Input from '@/components/atoms/InputForm'
 import React, { useCallback, useEffect, useState } from 'react'
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form'
 import AuthSocialButton from './AuthSocialButton'

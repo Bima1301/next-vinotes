@@ -13,9 +13,10 @@ interface ItemsProps {
     onClick?: () => void;
 }
 
+
 function className({ active }: { active: boolean }) {
     return clsx(`pl-6 py-3 mx-5 rounded-md text-center cursor-pointer mb-3 flex items-center transition-colors md:text-base text-sm`, active
-        ? "bg-[#97FFF4] bg-opacity-[0.6] text-white" : "text-white hover:bg-[#97FFF4] hover:bg-opacity-[0.6] hover:text-white")
+        ? "bg-indigo-600 bg-opacity-[0.5] text-white" : "text-white hover:bg-indigo-600 hover:bg-opacity-[0.6] hover:text-white")
 }
 const Items: React.FC<ItemsProps> = ({ label, icon: Icon, active, href, onClick, isButton }) => (
     <>
@@ -70,5 +71,6 @@ const DashboardItem: React.FC<DashboardItemProps> = ({ mainLabel, items }) => (
         ))}
     </div>
 );
+
 
 export default DashboardItem;

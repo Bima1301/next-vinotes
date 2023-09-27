@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
+import { Input } from 'antd';
 
 type Input = {
     label: string;
@@ -12,7 +13,7 @@ type Input = {
     placeholder?: string;
     errorMessage?: string;
 }
-export default function Input({ label, id, type = 'text', required = false, register, errors, disabled = false, placeholder, errorMessage }: Input) {
+export default function InputForm({ label, id, type = 'text', required = false, register, errors, disabled = false, placeholder, errorMessage }: Input) {
     return (
         <div className='flex flex-col items-start w-full mb-3'>
             <label htmlFor={id} className='md:text-sm text-xs font-semibold text-gray-700 mb-1'>{label}</label>

@@ -26,13 +26,15 @@ export default function Card(
                 {title.length > 20 ? title.slice(0, 20) + '...' : title} </p>
             {
                 image ? (
-                    <Image
-                        src={image}
-                        alt="Picture of the author"
-                        width={500}
-                        height={500}
-                        className='rounded-md'
-                    />
+                    <div className="w-full relative pt-[100%]">
+                        <Image
+                            src={image}
+                            alt="Picture of the author"
+                            objectFit="cover"
+                            fill
+                            className="w-full h-full top-0 left-0 object-cover rounded-2xl"
+                        />
+                    </div>
 
                 ) :
                     (<p className='md:text-base text-xs text-justify'>

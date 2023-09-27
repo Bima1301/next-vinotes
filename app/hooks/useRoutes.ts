@@ -1,9 +1,12 @@
 import { usePathname } from "next/navigation";
 import { HiHome } from "react-icons/hi";
+import { PiSquaresFourLight } from "react-icons/pi";
 import { useMemo } from "react";
 import { BsBuildingsFill, BsFillDoorOpenFill, BsFillFilePersonFill, BsFillGearFill } from "react-icons/bs";
 import { RiUserLocationFill } from "react-icons/ri";
 import { signOut } from "next-auth/react";
+import { BiNotepad, BiTask } from "react-icons/bi";
+import { IoDocumentTextOutline } from "react-icons/io5";
 
 const useRoutes = () => {
     const pathName = usePathname();
@@ -18,35 +21,53 @@ const useRoutes = () => {
                     items: [
                         {
                             label: "Overview",
-                            active: isActive("/dashboard/home"),
+                            active: isActive("/home"),
                             href: "/dashboard/home",
-                            icon: HiHome,
-                        }
+                            icon: PiSquaresFourLight,
+                        },
+                        {
+                            label: "Task",
+                            active: isActive("/dashboard/project"),
+                            href: "/dashboard/project",
+                            icon: BiTask,
+                        },
+                        {
+                            label: "Document",
+                            active: isActive("/dashboard/project"),
+                            href: "/dashboard/project",
+                            icon: IoDocumentTextOutline,
+                        },
+                        {
+                            label: "Notes",
+                            active: isActive("/dashboard/project"),
+                            href: "/dashboard/project",
+                            icon: BiNotepad,
+                        },
                     ],
                 },
-                {
-                    mainLabel: "Kelola Karyawan",
-                    items: [
-                        {
-                            label: "Divisi",
-                            active: isActive("/dashboard/division"),
-                            href: "/dashboard/division",
-                            icon: BsBuildingsFill,
-                        },
-                        {
-                            label: "Karyawan",
-                            active: isActive("/dashboard/employee"),
-                            href: "/dashboard/employee",
-                            icon: BsFillFilePersonFill,
-                        },
-                        {
-                            label: "Lokasi Kehadiran",
-                            active: isActive("/dashboard/attendance-location"),
-                            href: "/dashboard/attendance-location",
-                            icon: RiUserLocationFill,
-                        }
-                    ]
-                }
+                // {
+                //     mainLabel: "Category",
+                //     items: [
+                //         {
+                //             label: "Project",
+                //             active: isActive("/dashboard/division"),
+                //             href: "/dashboard/division",
+                //             icon: BsBuildingsFill,
+                //         },
+                //         {
+                //             label: "Busniness",
+                //             active: isActive("/dashboard/employee"),
+                //             href: "/dashboard/employee",
+                //             icon: BsFillFilePersonFill,
+                //         },
+                //         {
+                //             label: "Personal",
+                //             active: isActive("/dashboard/attendance-location"),
+                //             href: "/dashboard/attendance-location",
+                //             icon: RiUserLocationFill,
+                //         }
+                //     ]
+                // }
             ]
         },
         {

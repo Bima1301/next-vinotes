@@ -10,12 +10,13 @@ import useIsMobile from '@/app/hooks/useIsMobile';
 type MainLayoutProps = {
     children: React.ReactNode
     currentUser: any | null
+    category: {} | null
 }
 
 export default function MainLayout(
     {
         children,
-        currentUser
+        currentUser, category
     }: MainLayoutProps
 ) {
     const [showNav, setShowNav] = useState(true);
@@ -32,13 +33,13 @@ export default function MainLayout(
     }, [isMobile]);
 
     return (
-        <section className='bg-slate-200 min-h-screen'>
+        <section className='bg-indigo-100 min-h-screen'>
             <Toaster />
             <Topbar showNav={showNav} setShowNav={setShowNav} name={name} />
             <Transition
                 show={showNav}
             >
-                <Sidebar setShowNav={setShowNav} />
+                <Sidebar setShowNav={setShowNav} category={category} />
             </Transition>
             <div
                 className={`pt-24 ${showNav && !isMobile ? "pl-64" : ""
